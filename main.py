@@ -31,10 +31,11 @@ while iter < len(ids):
   info = response.json()
 
   results = info["results"]
+  
 
   if ('results' not in info or results == []):
-      print(f' Results Vazio - :{results}')
-      break
+      print(f'Id com problema: {ids} Results Vazio - :{results}')
+      
   
 
   history.append({'results': results})
