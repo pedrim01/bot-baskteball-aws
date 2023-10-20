@@ -2,7 +2,7 @@ import pandas as pd
 import requests
 import json
 
-base = pd.read_csv('base_basketball_orderByDateDecres_pt1.csv',low_memory=False)
+base = pd.read_csv('base_basketball_orderByDateDecres_pt1_2_2.csv',low_memory=False)
 
 ids = base['id'].to_list()
   
