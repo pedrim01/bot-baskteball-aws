@@ -6,8 +6,6 @@ base = pd.read_csv('base/base_basketball_orderByDateDecres_pt1_2_2.csv',low_memo
 
 ids = base['id'].to_list()
   
-
-
 TOKEN = '135809-0OL1dKtAJJPTWN'
 
 
@@ -36,7 +34,7 @@ while iter < len(ids):
 
   else:
     print(f"Erro na solicitação: Status {status}")
-
+    break
 #   if ('results' not in info or results == []):
 #       print(f'Id com problema: {ids} Results Vazio - :{results}')
 
