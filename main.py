@@ -20,30 +20,30 @@ while iter < len(ids):
 
   valores_id = ids[iter:iter+10]
   string_valores_id = ",".join(map(str, valores_id))
-
   
   link = f'https://api.b365api.com/v1/event/view?token={TOKEN}&event_id={string_valores_id}'
   
-
-
   response = requests.get(link)
   status = response.status_code
-  info = response.json()
+  if status==200:
+    info = response.json()
+    if 'results' in info:
+        results = info['results']
 
-  results = info["results"]
+    else:
+        print("A chave 'results' não foi encontrada no dicionário.")
+        results = ''
+
+  else:
+    print(f"Erro na solicitação: Status {status}")
+
+#   if ('results' not in info or results == []):
+#       print(f'Id com problema: {ids} Results Vazio - :{results}')
+#       results=''
   
-
-  if ('results' not in info or results == []):
-      print(f'Id com problema: {ids} Results Vazio - :{results}')
-      results=''
-      
-  
-
   history.append({'results': results})
   file_path = f"json-view/baskteball_view_{ids[iter]}.json"
   
-
-
   with open(file_path, 'w') as outfile:
       print(f"Salvando arquivo em: {file_path}")
       json.dump(history, outfile)
