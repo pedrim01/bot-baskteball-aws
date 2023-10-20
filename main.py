@@ -39,7 +39,7 @@ while iter < len(ids):
 
 #   if ('results' not in info or results == []):
 #       print(f'Id com problema: {ids} Results Vazio - :{results}')
-#       results=''
+
   
   history.append({'results': results})
   file_path = f"json-view/baskteball_view_{ids[iter]}.json"
