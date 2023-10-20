@@ -15,8 +15,8 @@ iter = 0
 history = list()
 
 
-# while iter < len(ids):
-while iter < 100:
+while iter < len(ids):
+# while iter < 100:
 
   valores_id = ids[iter:iter+10]
   string_valores_id = ",".join(map(str, valores_id))
