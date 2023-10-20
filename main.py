@@ -35,6 +35,7 @@ while iter < len(ids):
 
   if ('results' not in info or results == []):
       print(f'Id com problema: {ids} Results Vazio - :{results}')
+      results=''
       
   
 
